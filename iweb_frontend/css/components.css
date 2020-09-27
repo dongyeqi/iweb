@@ -338,24 +338,57 @@
 	}
 }
 
-
-/* 8.面包屑 */
-/*在ul的尾部生成一个新的子元素,
- 清除所有的li浮动导致的ul高度丢失问题*/
-.breadcrumb   ul:after  {  
+/*8. 面包屑 */
+.breadcrumb ul:after{
 	content: '';
 	display: block;
 	clear: both;
 }
-.breadcrumb  ul li {
+.breadcrumb ul li {
 	float: left;
 	line-height: 3em;
 }
-.breadcrumb ul li:not(:last-child):after {
+.breadcrumb ul li:not(:last-child):after{
 	content: '>';
-	margin: 0  0.5em;
+	margin: 0 0.5em;
 	color: #999;
 }
 .breadcrumb ul li a {
 	color: #999;
+}
+.pager {
+	padding: 3em 0;
+}
+.pager ul {
+	text-align: center;
+}
+.pager ul li {
+	display: inline-block;
+	border: 1px solid #ddd;
+	padding: 0.3em   0.7em;
+	cursor: pointer;
+}
+.pager ul li.active {
+	background: #99d989;
+	border: 1px solid #99d989;
+	cursor: pointer;
+}
+.pager ul li.disabled{
+	background: #f4f4f4;
+	cursor: pointer;
+}
+.pager ul li a {
+	color: #999;
+}
+.pager ul li.active a {
+	color: #fff;
+	cursor: default;
+}
+.pager  ul li.disabled a{
+	color: #ddd;
+	cursor: default;
+}
+.pager ul li:not(.active):hover,
+.pager ul li:not(.disabled):hover{
+	
 }

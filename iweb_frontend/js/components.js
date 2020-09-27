@@ -74,3 +74,21 @@ indicatorsList.forEach(function(e, i){
 		.classList.add('active')
 	}
 })
+//让轮播广告每隔3s自动切换到下一张
+//let timer = setTimeout()
+//周期性定时器
+let timer = setInterval(function(){
+	currentCarousel++
+	if(currentCarousel>=totalCarousel){
+		//如果切换到最后一张之后，则重新从头开始轮播
+		currentCarousel=0 
+	}
+	//切换当前显示的广告项
+	document.querySelector('.carousel>.items>li.active').classList.remove('active')
+	document.querySelector('.carousel>.items>li:nth-child(' + (currentCarousel+1) + ')')
+	.classList.add('active')
+	//切换当前广告项对应的指示器
+	document.querySelector('.carousel>.indicators>li.active').classList.remove('active')
+	document.querySelector('.carousel>.indicators>li:nth-child(' + (currentCarousel+1) + ')')
+	.classList.add('active')
+},3000)
