@@ -388,7 +388,6 @@
 	color: #ddd;
 	cursor: default;
 }
-.pager ul li:not(.active):hover,
-.pager ul li:not(.disabled):hover{
+.pager ul li:(.active):not(.disabled):hover{
 	
 }
